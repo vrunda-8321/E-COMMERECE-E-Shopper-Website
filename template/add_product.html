@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add</title>
+    </head>
+    <body>
+        <h2>Add Product</h2>
+        <form method='POST' enctype='multipart/form-data'>
+            {% csrf_token %}
+
+            Name:<input type='text' name='pname'><br>
+            description: <textarea name='pdis'></textarea><br>
+            price:<input type='text' name='pprice'><br>
+
+            Category:
+            <select name="cat">
+                {% for c in categories %}
+                    <option value="{{ c.cid }}">{{ c.cname }}</option>
+                {% endfor %}
+            </select><br>
+
+            Image: <input type="file" name="pimage"><br>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </body>
+</html>

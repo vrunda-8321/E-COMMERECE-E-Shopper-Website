@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block login %} active {% endblock %}
+{% block body %}
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 100px">
+            <h4 class="font-weight-semi-bold text-uppercase mb-3">Login</h4>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="">Home</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Login</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            
+        </div>
+        
+        <div class="row px-xl-5">
+            <div class="col-lg-7 mb-5">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form action="/login/" method="post">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                  <label class="text-black" for="uname">Username</label>
+                  <input type="text" class="form-control" id="uname" name='uname'>
+                </div>
+
+                <div class="form-group">
+                  <label class="text-black" for="pass">Password</label>
+                  <input type="Password" class="form-control" id="pass" name='pass1'>
+                </div>
+                <br>
+
+                <button type="submit" class="btn btn-primary py-2 px-4" id='id="login"'>Login</button>
+              </form>
+              <h5>Don't have Login, <a href="/register/">Clich Here</a></h5>
+                </div>
+            </div>
+        
+
+
+
+    
+
+{% endblock body %}

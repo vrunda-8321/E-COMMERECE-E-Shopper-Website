@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add</title>
+    </head>
+    <body>
+        <h2>Edit Product</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            Name: <input type="text" name="pname" value="{{ product.pname }}"><br>
+
+            Description:
+            <textarea name="pdis">{{ product.pdis }}</textarea><br>
+
+            Price: <input type="text" name="pprice" value="{{ product.pprice }}"><br>
+
+            Category:
+            <select name="cat">
+                {% for c in categories %}
+                    <option value="{{ c.cid }}" {% if c.cid == product.cat.cid %}selected{% endif %}>{{ c.cname }}</option>
+                {% endfor %}
+            </select><br>
+
+            <img src="{{ product.pimage.url }}" width="80"><br>
+            Change Image: <input type="file" name="pimage"><br>
+
+            <button type="submit">Update</button>
+        </form>
+
+    </body>
+</html>
