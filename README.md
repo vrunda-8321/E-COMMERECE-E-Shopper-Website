@@ -7,6 +7,7 @@ A full-stack e-commerce web application built using Django framework.
 - User Registration, Login & Logout
 - Product Listing with Search functionality
 - Add, Edit, Update and Delete products (CRUD)
+- Add to Cart functionality
 - Responsive UI using HTML, CSS and Bootstrap
 
 ## Tech Stack
