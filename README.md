@@ -31,4 +31,4 @@ A full-stack e-commerce web application built using Django framework.
    http://127.0.0.1:8000
 
 ## Project Status
-Completed as part of MCA 2nd year Django coursework.
+Completed Django coursework.
